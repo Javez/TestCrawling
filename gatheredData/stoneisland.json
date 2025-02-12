@@ -1,0 +1,442 @@
+{
+  "action": "ProductApi-Product",
+  "queryString": "cachekill=2025-02-12T13%3A57%3A17.629Z&pid=811522R39V0097",
+  "locale": "en_IT",
+  "originalUri": "https://www.stoneisland.com/Sites-StoneEU-Site/en_IT/ProductApi-Product?pid=811522R39V0097&cachekill=2025-02-12T13%3A57%3A17.629Z",
+  "pageTitle": null,
+  "pageDescription": null,
+  "pageKeywords": null,
+  "pageMetaTags": {
+    "og:image": "https://stoneisland-cdn.thron.com/delivery/public/image/stoneisland/811522R39V0097_F/ppk73x/std/400x600/811522R39V0097_F.jpg",
+    "twitter:card": "Product",
+    "twitter:site": "twitter.com/moncler",
+    "og:price:amount": "180.00",
+    "og:price:currency": "EUR",
+    "og:description": "Off White 22R39 50/2 ORGANIC COTTON PIQUÉ: discover all the exclusive styles of Stone Island Polos & T-Shirts. Shop from the official online store.",
+    "twitter:description": "Off White 22R39 50/2 ORGANIC COTTON PIQUÉ: discover all the exclusive styles of Stone Island Polos & T-Shirts. Shop from the official online store.",
+    "description": "Off White 22R39 50/2 ORGANIC COTTON PIQUÉ: discover all the exclusive styles of Stone Island Polos & T-Shirts. Shop from the official online store.",
+    "og:url": "https://www.stoneisland.com/en-it/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+    "twitter:url": "https://www.stoneisland.com/en-it/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+    "og:title": "Off White 22R39 50/2 ORGANIC COTTON PIQUÉ Short Sleeve Polo Shirt | Stone Island IT",
+    "twitter:title": "Off White 22R39 50/2 ORGANIC COTTON PIQUÉ Short Sleeve Polo Shirt | Stone Island IT",
+    "title": "Off White 22R39 50/2 ORGANIC COTTON PIQUÉ Short Sleeve Polo Shirt | Stone Island IT"
+  },
+  "uuid": "0c9ce77dda0fa89ba58939fce0",
+  "id": "811522R39V0097",
+  "productName": "22R39 50/2 ORGANIC COTTON PIQUÉ",
+  "productType": "variationGroup",
+  "price": {
+    "sales": {
+      "value": 126,
+      "currency": "EUR",
+      "formatted": "€ 126,00"
+    },
+    "list": {
+      "value": 180,
+      "currency": "EUR",
+      "formatted": "€ 180,00"
+    }
+  },
+  "imgs": {
+    "urls": [
+      "https://stoneisland-cdn.thron.com/delivery/public/image/stoneisland/811522R39V0097_F/ppk73x/std/0x0/811522R39V0097_F.jpg",
+      "https://stoneisland-cdn.thron.com/delivery/public/image/stoneisland/811522R39V0097_R/ppk73x/std/0x0/811522R39V0097_R.jpg",
+      "https://stoneisland-cdn.thron.com/delivery/public/image/stoneisland/811522R39V0097_A/ppk73x/std/0x0/811522R39V0097_A.jpg",
+      "https://stoneisland-cdn.thron.com/delivery/public/image/stoneisland/811522R39V0097_B/ppk73x/std/0x0/811522R39V0097_B.jpg"
+    ],
+    "alt": "22R39 50/2 ORGANIC COTTON PIQUÉ Off White Stone Island"
+  },
+  "variationAttributes": [
+    {
+      "attributeId": "color",
+      "displayName": "Color",
+      "displayValue": "Off White",
+      "id": "color",
+      "swatchable": true,
+      "value": "V0097",
+      "values": [
+        {
+          "id": "V0097",
+          "displayValue": "Off White",
+          "value": "V0097",
+          "selected": true,
+          "productId": "811522R39V0097",
+          "refinementColor": "White",
+          "swatchColor": "#F3F0E8",
+          "productUrl": "/en-it/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+          "route": "/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+          "isOnlineExclusive": false,
+          "isBoutiqueExclusive": false
+        },
+        {
+          "id": "V0062",
+          "displayValue": "Lead Grey",
+          "value": "V0062",
+          "productId": "811522R39V0062",
+          "refinementColor": "Grey",
+          "swatchColor": "#4A443F",
+          "productUrl": "/en-it/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0062.html",
+          "route": "/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0062.html",
+          "isOnlineExclusive": false,
+          "isBoutiqueExclusive": false
+        },
+        {
+          "id": "V0024",
+          "displayValue": "Avio Blue",
+          "value": "V0024",
+          "productId": "811522R39V0024",
+          "refinementColor": "Blue",
+          "swatchColor": "#285169",
+          "productUrl": "/en-it/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0024.html",
+          "route": "/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0024.html",
+          "isOnlineExclusive": false,
+          "isBoutiqueExclusive": false
+        }
+      ]
+    },
+    {
+      "attributeId": "size",
+      "displayName": "Size",
+      "displayValue": "",
+      "id": "size",
+      "swatchable": false,
+      "value": "",
+      "values": [
+        {
+          "id": "S",
+          "displayValue": "S",
+          "value": "S",
+          "ATS": 0,
+          "hasSizeLimitedAvailability": true
+        },
+        {
+          "id": "M",
+          "displayValue": "M",
+          "value": "M",
+          "ATS": 0,
+          "hasSizeLimitedAvailability": true
+        },
+        {
+          "id": "L",
+          "displayValue": "L",
+          "value": "L",
+          "ATS": 0,
+          "hasSizeLimitedAvailability": true
+        },
+        {
+          "id": "XL",
+          "displayValue": "XL",
+          "value": "XL",
+          "ATS": 0,
+          "hasSizeLimitedAvailability": true
+        },
+        {
+          "id": "XXL",
+          "displayValue": "XXL",
+          "value": "XXL",
+          "ATS": 0,
+          "hasSizeLimitedAvailability": true
+        },
+        {
+          "id": "3X",
+          "displayValue": "3XL",
+          "value": "3X",
+          "ATS": 0,
+          "hasSizeLimitedAvailability": true
+        }
+      ]
+    }
+  ],
+  "longDescription": "Short sleeve Polo shirt in cotton piqué.",
+  "shortDescription": "Polo shirt made from cotton piqué featuring a two-button neck fastening, tonal Stone Island Compass logo on the chest, and ribbed details.",
+  "description": "Short sleeve Polo shirt in cotton piqué.",
+  "promotions": [
+    {
+      "calloutMsg": "-30%",
+      "details": "",
+      "enabled": true,
+      "id": "public-sales-2024-fw-it",
+      "name": "Public Sales 2024 FW IT",
+      "promotionClass": "PRODUCT",
+      "rank": null
+    }
+  ],
+  "attributes": [
+    {
+      "ID": "monclerCustom",
+      "name": "product.monclercustom",
+      "attributes": [
+        {
+          "label": "hideBodyMeasurements",
+          "value": [false]
+        }
+      ]
+    },
+    {
+      "ID": "stylistNote",
+      "name": "Style Notes",
+      "attributes": [
+        {
+          "label": null,
+          "value": [
+            "Ribbed collar. Two buttons neck fastening. On chest, tonal Stone Island Compass logo patch. Ribbed edge at sleeves. Lateral bottom slits with inner striped tape appliqué. Regular fit."
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "compositionAndCare",
+      "name": "Composition and Care",
+      "attributes": [
+        {
+          "label": "Composition",
+          "value": ["100% Cotton"]
+        },
+        {
+          "label": null,
+          "value": [
+            {
+              "type": "image",
+              "url": "https://www.stoneisland.com/on/demandware.static/-/Sites-stoneisland-master-catalog/default/dw942b0d4f/1B.svg"
+            }
+          ]
+        },
+        {
+          "label": null,
+          "value": [
+            {
+              "type": "image",
+              "url": "https://www.stoneisland.com/on/demandware.static/-/Sites-stoneisland-master-catalog/default/dwf6e79abd/22W.svg"
+            }
+          ]
+        },
+        {
+          "label": null,
+          "value": [
+            {
+              "type": "image",
+              "url": "https://www.stoneisland.com/on/demandware.static/-/Sites-stoneisland-master-catalog/default/dw62c40d9e/32.svg"
+            }
+          ]
+        },
+        {
+          "label": null,
+          "value": [
+            {
+              "type": "image",
+              "url": "https://www.stoneisland.com/on/demandware.static/-/Sites-stoneisland-master-catalog/default/dw21e8eeae/42.svg"
+            }
+          ]
+        },
+        {
+          "label": null,
+          "value": [
+            {
+              "type": "image",
+              "url": "https://www.stoneisland.com/on/demandware.static/-/Sites-stoneisland-master-catalog/default/dw8f029d65/54.svg"
+            }
+          ]
+        },
+        {
+          "label": null,
+          "value": [
+            {
+              "type": "image",
+              "url": "https://www.stoneisland.com/on/demandware.static/-/Sites-stoneisland-master-catalog/default/dw8630f9ce/I70S.svg"
+            }
+          ]
+        },
+        {
+          "label": "Care",
+          "value": [
+            "Wash  max 30°C - Mild process; Do not bleach; Do not tumble dry; Ironing maximum temperature 110°C - without steam; Do not dry clean; Line dry in the shade; Wash separately; Wash inside out; Use neutral detergent"
+          ]
+        }
+      ]
+    }
+  ],
+  "hasLimitedAvailability": true,
+  "hasLimitedAvailabilityDepth": true,
+  "limitedAvailabilityConfig": {
+    "showLimitedAvailabilityLabel": true,
+    "showSimilarProducts": true,
+    "similarProductConfig": {
+      "showSimilarProducts": true,
+      "useRecommender": false,
+      "recommenderId": null,
+      "productIdList": []
+    }
+  },
+  "availability": {
+    "isOutOfStock": true
+  },
+  "available": false,
+  "selectedProductUrl": "/en-it/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39.html",
+  "readyToOrder": false,
+  "masterId": "811522R39",
+  "analyticsAttributes": {
+    "item_name": "22r39 50/2 organic cotton piqué",
+    "item_category": "polos & t-shirts",
+    "item_category2": "polos",
+    "item_category3": "outofstock",
+    "item_category4": "men",
+    "item_category5": "fall winter",
+    "item_variant": "V0097",
+    "item_MFC": "811522R39V0097",
+    "item_list_name": "eu/polos_and_t-shirts/men/fw"
+  },
+  "originalModelName": "22R39 50/2 ORGANIC COTTON PIQUÉ",
+  "sellableRegion": null,
+  "collectionCode": null,
+  "primaryCategory": "polos_and_t-shirts",
+  "topLevelCategory": "",
+  "currencyCode": "N/A",
+  "variationGroupData": null,
+  "compositionAndCare": {
+    "name": "Composition and Care",
+    "care": "Wash  max 30°C - Mild process; Do not bleach; Do not tumble dry; Ironing maximum temperature 110°C - without steam; Do not dry clean; Line dry in the shade; Wash separately; Wash inside out; Use neutral detergent",
+    "showCareDescription": false,
+    "composition": "100% Cotton",
+    "icons": [
+      {
+        "description": "Machine wash max 30°C - Mild process",
+        "url": "https://www.stoneisland.com/on/demandware.static/-/Sites-stoneisland-master-catalog/default/dw942b0d4f/1B.svg"
+      },
+      {
+        "description": "Do not bleach",
+        "url": "https://www.stoneisland.com/on/demandware.static/-/Sites-stoneisland-master-catalog/default/dwf6e79abd/22W.svg"
+      },
+      {
+        "description": "Do not tumble dry",
+        "url": "https://www.stoneisland.com/on/demandware.static/-/Sites-stoneisland-master-catalog/default/dw62c40d9e/32.svg"
+      },
+      {
+        "description": "Iron max 110°C - without steam",
+        "url": "https://www.stoneisland.com/on/demandware.static/-/Sites-stoneisland-master-catalog/default/dw21e8eeae/42.svg"
+      },
+      {
+        "description": "Do not dry clean",
+        "url": "https://www.stoneisland.com/on/demandware.static/-/Sites-stoneisland-master-catalog/default/dw8f029d65/54.svg"
+      },
+      {
+        "description": "Line dry in the shade",
+        "url": "https://www.stoneisland.com/on/demandware.static/-/Sites-stoneisland-master-catalog/default/dw8630f9ce/I70S.svg"
+      }
+    ]
+  },
+  "noFollow": false,
+  "noIndex": false,
+  "breadcrumbs": [
+    {
+      "htmlValue": "Stone Island Main",
+      "categoryId": "main",
+      "url": "/en-it/men/main"
+    },
+    {
+      "htmlValue": "Polos & T-shirts",
+      "categoryId": "main-shirts",
+      "url": "/en-it/collection/polos-and-t-shirts"
+    }
+  ],
+  "hasNft": null,
+  "nftCampaign": null,
+  "imageBackground": "white",
+  "hideBodyMeasurements": false,
+  "showSizeChart": true,
+  "madeIn": "Made in Turkey",
+  "isComingSoon": 0,
+  "hasLook": false,
+  "type": "full",
+  "meta": {
+    "hreflangs": [
+      "de-at https://www.stoneisland.com/de-at/collection/polos-und-t-shirts/kurzaermeliges-poloshirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "fr-be https://www.stoneisland.com/fr-be/collection/polos-et-t-shirts/polo-a-manches-courtes-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-be https://www.stoneisland.com/en-be/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-bg https://www.stoneisland.com/en-bg/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-ca https://www.stoneisland.com/en-ca/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "fr-ca https://www.stoneisland.com/fr-ca/collection/polos-et-t-shirts/polo-a-manches-courtes-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-hr https://www.stoneisland.com/en-hr/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-cy https://www.stoneisland.com/en-cy/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-cz https://www.stoneisland.com/en-cz/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-dk https://www.stoneisland.com/en-dk/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-ee https://www.stoneisland.com/en-ee/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-fi https://www.stoneisland.com/en-fi/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "fr-fr https://www.stoneisland.com/fr-fr/collection/polos-et-t-shirts/polo-a-manches-courtes-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "de-de https://www.stoneisland.com/de-de/collection/polos-und-t-shirts/kurzaermeliges-poloshirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-gr https://www.stoneisland.com/en-gr/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-hu https://www.stoneisland.com/en-hu/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-ie https://www.stoneisland.com/en-ie/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "it-it https://www.stoneisland.com/it-it/collection/polos-e-t-shirts/polo-a-maniche-corte-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "ja-jp https://www.stoneisland.com/ja-jp/collection/%E3%81%99%E3%81%B9%E3%81%A6%E8%A1%A8%E7%A4%BA/%E3%83%9D%E3%83%AD%E3%82%B7%E3%83%A3%E3%83%84-%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B9%E3%83%AA%E3%83%BC%E3%83%96-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-lv https://www.stoneisland.com/en-lv/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-lt https://www.stoneisland.com/en-lt/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "fr-lu https://www.stoneisland.com/fr-lu/collection/polos-et-t-shirts/polo-a-manches-courtes-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-mt https://www.stoneisland.com/en-mt/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-nl https://www.stoneisland.com/en-nl/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-no https://www.stoneisland.com/en-no/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-pl https://www.stoneisland.com/en-pl/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-pt https://www.stoneisland.com/en-pt/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-ro https://www.stoneisland.com/en-ro/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-ru https://www.stoneisland.com/en-ru/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-sk https://www.stoneisland.com/en-sk/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-si https://www.stoneisland.com/en-si/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "ko-kr https://www.stoneisland.com/ko-kr/collection/%EB%AA%A8%EB%91%90-%EB%B3%B4%EA%B8%B0/%EB%B0%98%EC%86%8C%EB%A7%A4-%ED%8F%B4%EB%A1%9C-%EC%85%94%EC%B8%A0-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "es-es https://www.stoneisland.com/es-es/collection/polos-y-camisetas/polo-de-manga-corta-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-se https://www.stoneisland.com/en-se/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "de-ch https://www.stoneisland.com/de-ch/collection/polos-und-t-shirts/kurzaermeliges-poloshirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "fr-ch https://www.stoneisland.com/fr-ch/collection/polos-et-t-shirts/polo-a-manches-courtes-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-gb https://www.stoneisland.com/en-gb/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "en-us https://www.stoneisland.com/en-us/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html"
+    ],
+    "canonical": "https://www.stoneisland.com/en-it/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html"
+  },
+  "modelSize": "Model height: 185 - size: L",
+  "sizeAndFit": "<ul class=\"mb-6\"><li>Regular</li></ul><ul></ul>",
+  "fitting": "Regular",
+  "returnDisabled": false,
+  "paddingManual": null,
+  "modelMeasures": {
+    "modelHeight": "185",
+    "modelSize": "L",
+    "modelChest": "95",
+    "modelHips": "92",
+    "modelWaist": "82",
+    "sizeAndFit": "Regular"
+  },
+  "earlyaccess": {
+    "private": false
+  },
+  "editorial": {
+    "shippingAndReturn": {
+      "ID": "shipping-and-return",
+      "UUID": "0d28ccf0afac19eeff9127b166",
+      "name": "Shipping and return",
+      "body": "<p>\r\n<u><b>SHIPPING<b/></u><br/><br/>\r\n<strong>Standard Shipping:</strong> Delivery in 4-6 working days <br/>\r\n<strong>Express Shipping:</strong> Delivery in 1-3 working days <br/>\r\n<strong>Pick up in store:</strong> Delivery in 1-3 working days<br/>\r\n<strong>Saturday Shipping:</strong> Delivery guaranteed on Saturday morning<br/>\r\n<strong>Next Day Shipping:</strong> Delivery guaranteed next working day<br/>\r\n</p>\r\n<p>\r\n<u><b>RETURNS</b></u><br/><br/>\r\nYou may return any product within <strong>14 days</strong> of the delivery date. <br />Fill in the online <a href=\"/link/page/returns\" target=\"_blank\">Return Form</a> and call UPS to request a pick-up, or download and consult the <a href=\"/on/demandware.static/-/Library-Sites-library-stone-global/default/documents/returns/Form_to_Exercise_your_Right_to_Return.pdf\" target=\"_blank\">Hardcopy Return Form</a> to exercise your right to return.\r\n</p>"
+    },
+    "boutiqueExclusiveShippingAndReturn": null,
+    "returnDisabledShippingAndReturn": null,
+    "specialServicesPdp": {
+      "ID": "special-services-pdp",
+      "UUID": "1d3d925f86709c89e1938d5164",
+      "name": "SPECIAL SERVICES",
+      "body": "<dl class=\"doubled\">\r\n<dt>Reusable materials:</dt>\r\n<dd>The shipping materials for Stoneisland.com were chosen with consideration to both the nature and quantity of materials used as well as the notion of reusability. </dd>\r\n<dt>Reusable materials:</dt>\r\n<dd>The box used for shipping is made from recycled cardboard.</dd>\r\n<dt>Inside:</dt>\r\n<dd>The inside is lined with a simple box in lightweight, white cardboard, 40% PCW, from post-consumer waste.</dd>\r\n<dt>Contents:</dt>\r\n<dd>Inside, the garments are packaged in re-usable R-PET fabric bags: R-PET is made from 100% PCW, post-consumer waste recycled PET plastic.</dd>\r\n</dl>"
+    }
+  },
+  "categoryId": "main-shirts",
+  "seoName": "Short Sleeve Polo Shirt",
+  "editorialPage": null,
+  "__mccEvents": [
+    [
+      "trackCart",
+      {
+        "clear_cart": true
+      }
+    ],
+    [
+      "trackPageView",
+      {
+        "item": "811522R39V0097"
+      }
+    ]
+  ]
+}

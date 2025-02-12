@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "api": "node api.js",
+    "playwright": "node playwright.js",
+    "puppeteer": "node puppeteer.js",
+    "request": "node request.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "got-scraping": "^3.2.15",
+    "playwright": "1.41",
+    "puppeteer": "^23.5.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.1"
+  }
+}
