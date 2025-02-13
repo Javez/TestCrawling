@@ -24,6 +24,7 @@
  */
 import { gotScraping } from "got-scraping";
 import * as cheerio from "cheerio";
+import * as fs from "fs";
 
 const urls = [
   "https://www.miinto.it/p-de-ver-s-abito-slip-3059591a-7c04-405c-8015-0936fc8ff9dd",
@@ -31,25 +32,43 @@ const urls = [
   "https://www.miinto.it/p-abito-bianco-con-stampa-grafica-e-scollo-a-v-profondo-2b03a3d9-fab1-492f-8efa-9151d3322ae7",
 ];
 
-
-// Extract product details from HTML
 const extractData = (html, url) => {
   const $ = cheerio.load(html);
 
-  const fullPriceText = $(".price--full")
-    .text()
-    .replace(/[^\d.]/g, "");
-  const discountedPriceText = $(".price--discounted")
-    .text()
-    .replace(/[^\d.]/g, "");
-  const currency =
-    $(".price")
-      .text()
-      .match(/[A-Z]{3}/)?.[0] || "EUR"; // Adjust based on site format
-  const title = $("h1.product-title").text().trim();
+  const title = $("h1[data-testid='product-name']").text().trim();
 
-  const fullPrice = parseFloat(fullPriceText) || 0;
-  const discountedPrice = parseFloat(discountedPriceText) || fullPrice;
+  const fullPriceText = $("p[data-testid='product-price']")
+    .text()
+    .trim()
+    .replace(/[^\d,.-]/g, "") 
+    .replace(",", ".");
+
+  const discountedPriceText = $("p[data-testid='product-previous-price']")
+    .text()
+    .trim()
+    .replace(/[^\d,.-]/g, "") 
+    .replace(",", ".");
+
+  const fullPrice = parseFloat(fullPriceText).toFixed(2);
+  const discountedPrice = discountedPriceText
+    ? parseFloat(discountedPriceText).toFixed(2)
+    : fullPrice;
+
+  const priceText = $("p[data-testid='product-price']").text().trim();
+
+  const currencySymbol = priceText.match(/[\€\$\£\¥\₹]/)?.[0] || "";
+  let currency = undefined;
+  if (currencySymbol === "€") {
+    currency = "EUR";
+  } else if (currencySymbol === "$") {
+    currency = "USD";
+  } else if (currencySymbol === "£") {
+    currency = "GBP";
+  } else if (currencySymbol === "¥") {
+    currency = "JPY";
+  } else if (currencySymbol === "₹") {
+    currency = "INR";
+  }
 
   return {
     url,
@@ -60,27 +79,29 @@ const extractData = (html, url) => {
   };
 };
 
-// 1️⃣ Crawl URLs in SEQUENCE
 const crawlSequential = async () => {
+  const results = [];
   console.log("Crawling in SEQUENCE...");
 
   for (const url of urls) {
     try {
       const response = await gotScraping(url);
+
       if (response.statusCode !== 200) {
         throw new Error(
           `Failed to load ${url} - Status: ${response.statusCode}`
         );
       }
       const productData = extractData(response.body, url);
-      console.log(productData);
+      results.push(productData);
     } catch (error) {
       console.error(`Error scraping ${url}:`, error.message);
     }
   }
+
+  return results;
 };
 
-// 2️⃣ Crawl URLs in PARALLEL
 const crawlParallel = async () => {
   console.log("Crawling in PARALLEL...");
 
@@ -100,109 +121,26 @@ const crawlParallel = async () => {
   });
 
   const results = await Promise.all(promises);
-  console.log(results.filter(Boolean)); // Filter out failed requests
+  return results;
 };
 
-// Run both crawling functions
 (async () => {
-  await crawlSequential();
-  await crawlParallel();
+  const resultOne = await crawlSequential();
+  const resultTwo = await crawlParallel();
+
+  try {
+    fs.writeFileSync(
+      "./src/request-sequential-result.json",
+      JSON.stringify({ resultOne }, null, 2),
+      "utf8"
+    );
+    fs.writeFileSync(
+      "./src/request-parralel-result.json",
+      JSON.stringify({ resultTwo }, null, 2),
+      "utf8"
+    );
+    console.log("Finished writing result");
+  } catch (err) {
+    console.log("Error during work:\n", err);
+  }
 })();
-
-
-/*
-Example;
-
-import { gotScraping } from "got-scraping";
-
-gotScraping.get("https://apify.com").then(({ body }) => console.log(body));
-
-gotScraping
-  .get({
-    url: "https://apify.com",
-    proxyUrl: "http://usernamed:password@myproxy.com:1234",
-  })
-  .then(({ body }) => console.log(body));
-
-const response = await gotScraping({
-  url: "https://api.apify.com/v2/browser-info",
-  headerGeneratorOptions: {
-    browsers: [
-      {
-        name: "chrome",
-        minVersion: 87,
-        maxVersion: 89,
-      },
-    ],
-    devices: ["desktop"],
-    locales: ["de-DE", "en-US"],
-    operatingSystems: ["windows", "linux"],
-  },
-});
-
-//Overriding request headers
-
-const response = await gotScraping({
-  url: "https://apify.com/",
-  headers: {
-    "user-agent": "test",
-  },
-});
-
-//JSON Mode
-
-const response = await gotScraping({
-  responseType: "json",
-  url: "https://api.apify.com/v2/browser-info",
-});
-
-// ESM or TypeScript:
-import * as cheerio from "cheerio";
-
-// In other environments:
-const cheerio = require("cheerio");
-
-const $ = cheerio.load('<ul id="fruits">...</ul>');
-
-$.html();
-//=> <html><head></head><body><ul id="fruits">...</ul></body></html>
-
-$(".apple", "#fruits").text();
-//=> Apple
-
-$("ul .pear").attr("class");
-//=> pear
-
-$("li[class=orange]").html();
-//=> Orange
-
-$.root().html();
-//=>  <html>
-//      <head></head>
-//      <body>
-//        <ul id="fruits">
-//          <li class="apple">Apple</li>
-//          <li class="orange">Orange</li>
-//          <li class="pear">Pear</li>
-//        </ul>
-//      </body>
-//    </html>
-
-$(".pear").prop("outerHTML");
-//=> <li class="pear">Pear</li>
-
-const $ = cheerio.load("This is <em>content</em>.");
-$("body").text();
-//=> This is content.
-
-//The "DOM Node" object
-
-tagName;
-parentNode;
-previousSibling;
-nextSibling;
-nodeValue;
-firstChild;
-childNodes;
-lastChild;
-*/

@@ -2,7 +2,7 @@
  * 1) -----------------------------------------------------------------------------------------------------------
  *      Use puppeteer navigate to the following urls.
  *      Check response status code (200, 404, 403), proceed only in case of code 200, throw an error in other cases.
- * 
+ *
  *      Using cheerio extract from html:
  *          - fullPrice (it has to be a number)
  *          - discountedPrice (it has to be a number, if it does not exist same as fullPrice)
@@ -34,15 +34,18 @@
  */
 import puppeteer from "puppeteer";
 import * as cheerio from "cheerio";
+import * as fs from "fs";
 
 const urls = [
-    'https://www.outdoorsrlshop.it/catalogo/1883-trekker-rip.html',
-    'https://www.outdoorsrlshop.it/catalogo/2928-arco-man-t-shirt.html'
+  "https://www.outdoorsrlshop.it/catalogo/1883-trekker-rip.html",
+  "https://www.outdoorsrlshop.it/catalogo/2928-arco-man-t-shirt.html",
+  "https://www.outdoorsrlshop.it/catalogo/2383-aircontact-core-65-10-sl.html", //added because previos links does not have discount prices
 ];
 
 async function scrape() {
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
+  const results = [];
 
   for (const url of urls) {
     try {
@@ -53,39 +56,50 @@ async function scrape() {
         throw new Error(`Failed to load ${url} - Status: ${status}`);
       }
 
-      // Extract HTML and load into Cheerio
       const content = await page.content();
       const $ = cheerio.load(content);
 
-      // Extract product details (Modify selectors based on actual website structure)
-      const fullPriceText = $(".price--full")
+      const title = $("h1").text().trim();
+
+      const prezzoDiv = $("main .valutazione").next(".prezzo");
+
+      const fullPriceText = prezzoDiv.find(".upyPrezzoFinale").text().trim();
+
+      const discountedPriceText = prezzoDiv
+        .find(".upyPrezzoScontato")
         .text()
-        .replace(/[^\d.]/g, "");
-      const discountedPriceText = $(".price--discounted")
-        .text()
-        .replace(/[^\d.]/g, "");
-      const currency =
-        $(".price")
-          .text()
-          .match(/[A-Z]{3}/)?.[0] || "EUR"; // Adjust based on site format
-      const title = $("h1.product-title").text().trim();
+        .trim();
 
-      const fullPrice = parseFloat(fullPriceText) || 0;
-      const discountedPrice = parseFloat(discountedPriceText) || fullPrice;
+      const priceText = prezzoDiv.text().trim();
 
-      console.log({
-        url,
-        fullPrice,
-        discountedPrice,
-        currency,
-        title,
-      });
+      const currencySymbol = priceText.match(/[\€\$\£\¥\₹]/)?.[0] || "";
+      let currency = undefined;
+      if (currencySymbol === "€") {
+        currency = "EUR";
+      } else if (currencySymbol === "$") {
+        currency = "USD";
+      } else if (currencySymbol === "£") {
+        currency = "GBP";
+      } else if (currencySymbol === "¥") {
+        currency = "JPY";
+      } else if (currencySymbol === "₹") {
+        currency = "INR";
+      }
 
-      // Extract product options
+      const fullPrice =
+        parseFloat(
+          fullPriceText.replace(/[^\d,.-]/g, "").replace(",", ".")
+        ).toFixed(2) || 0;
+      const discountedPrice = discountedPriceText
+        ? parseFloat(
+            discountedPriceText.replace(/[^\d,.-]/g, "").replace(",", ".")
+          ).toFixed(2)
+        : fullPrice;
+
       const options = [];
-      const selectElement = await page.$("select");
+      const selectElement = await page.$("select.scegliVarianti");
       if (selectElement) {
-        const optionElements = await page.$$("select option");
+        const optionElements = await page.$$("select.scegliVarianti option");
 
         for (const option of optionElements) {
           const value = await option.evaluate((el) => el.textContent.trim());
@@ -96,55 +110,38 @@ async function scrape() {
           options.push({ value, optionValue });
         }
 
-        console.log("Product options:", options);
-
-        // Select the second option if available, otherwise the first
         if (options.length > 1) {
-          await page.select("select", options[1].optionValue);
+          await page.select("select.scegliVarianti", options[1].optionValue);
         } else if (options.length > 0) {
-          await page.select("select", options[0].optionValue);
+          await page.select("select.scegliVarianti", options[0].optionValue);
         }
       }
+
+      results.push({
+        url,
+        fullPrice,
+        discountedPrice,
+        currency,
+        title,
+        options,
+      });
     } catch (error) {
       console.error(`Error scraping ${url}:`, error.message);
     }
   }
 
   await browser.close();
+
+  try {
+    fs.writeFileSync(
+      "./src/puppeteer-result.json",
+      JSON.stringify({ results }, null, 2),
+      "utf8"
+    );
+    console.log("Finished writing result");
+  } catch (err) {
+    console.log("Error during work:\n", err);
+  }
 }
 
 scrape();
-
-
-/*Example;
-
-import puppeteer from "puppeteer";
-// Or import puppeteer from 'puppeteer-core';
-
-// Launch the browser and open a new blank page
-const browser = await puppeteer.launch();
-const page = await browser.newPage();
-
-// Navigate the page to a URL.
-await page.goto("https://developer.chrome.com/");
-
-// Set screen size.
-await page.setViewport({ width: 1080, height: 1024 });
-
-// Type into search box.
-await page.locator(".devsite-search-field").fill("automate beyond recorder");
-
-// Wait and click on first result.
-await page.locator(".devsite-result-item-link").click();
-
-// Locate the full title with a unique string.
-const textSelector = await page
-  .locator("text/Customize and automate")
-  .waitHandle();
-const fullTitle = await textSelector?.evaluate((el) => el.textContent);
-
-// Print the full title.
-console.log('The title of this blog post is "%s".', fullTitle);
-
-await browser.close();
-*/

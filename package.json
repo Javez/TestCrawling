@@ -1,9 +1,10 @@
 {
+  "type": "module",
   "scripts": {
-    "api": "node api.js",
-    "playwright": "node playwright.js",
-    "puppeteer": "node puppeteer.js",
-    "request": "node request.js"
+    "api-file": "node src/api.js",
+    "playwright-file": "node src/playwright.js",
+    "puppeteer-file": "node src/puppeteer.js",
+    "request-file": "node src/request.js"
   },
   "dependencies": {
     "cheerio": "^1.0.0",
@@ -12,7 +13,6 @@
     "puppeteer": "^23.5.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.50.1",
     "@types/node": "^22.13.1"
   }
 }

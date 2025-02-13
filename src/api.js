@@ -22,6 +22,7 @@
  * --------------------------------------------------------------------------------------------------------------
  */
 import { gotScraping } from "got-scraping";
+import * as fs from "fs";
 
 const urls = [
   "https://www.stoneisland.com/en-it/collection/polos-and-t-shirts/slim-fit-short-sleeve-polo-shirt-2sc17-stretch-organic-cotton-pique-81152SC17A0029.html",
@@ -29,6 +30,8 @@ const urls = [
 ];
 
 async function scrape() {
+  const results = [];
+
   for (const url of urls) {
     try {
       const productIdMatch = url.match(/-([\w\d]+)\.html$/);
@@ -51,70 +54,34 @@ async function scrape() {
 
       const data = response.body;
 
-      const result = {
+      results.push({
         url,
         apiUrl,
         productId: productId,
-        fullPrice: parseFloat(data.price.list.value || 0),
-        discountedPrice: parseFloat(
-          data.price.sales?.value || data.price.list?.value || 0
+        fullPrice: parseFloat(
+          data.price?.list?.value || data.price?.sales?.value || "N/A"
         ),
-        currency: data.price.list?.currency || "N/A",
+        discountedPrice: parseFloat(
+          data.price?.sales?.value || data.price?.list?.value || 0
+        ),
+        currency: data.price?.list?.currency || "USD",
         title: data.pageMetaTags?.["og:title"] || data.productName || "Unknown",
-      };
+      });
 
-      console.log("Result:", result);
     } catch (error) {
       console.error(`Error scraping ${url}:`, error.message);
     }
   }
+  try {
+    fs.writeFileSync(
+      "./src/api-result.json",
+      JSON.stringify({ results }, null, 2),
+      "utf8"
+    );
+    console.log("Finished writing result");
+  } catch (err) {
+    console.log("Error during work:\n", err);
+  }
 }
 
 scrape();
-
-/*
-Example;
-
-import { gotScraping } from "got-scraping";
-
-gotScraping.get("https://apify.com").then(({ body }) => console.log(body));
-
-gotScraping
-  .get({
-    url: "https://apify.com",
-    proxyUrl: "http://usernamed:password@myproxy.com:1234",
-  })
-  .then(({ body }) => console.log(body));
-
-const response = await gotScraping({
-  url: "https://api.apify.com/v2/browser-info",
-  headerGeneratorOptions: {
-    browsers: [
-      {
-        name: "chrome",
-        minVersion: 87,
-        maxVersion: 89,
-      },
-    ],
-    devices: ["desktop"],
-    locales: ["de-DE", "en-US"],
-    operatingSystems: ["windows", "linux"],
-  },
-});
-
-//Overriding request headers
-
-const response = await gotScraping({
-  url: "https://apify.com/",
-  headers: {
-    "user-agent": "test",
-  },
-});
-
-//JSON Mode
-
-const response = await gotScraping({
-  responseType: "json",
-  url: "https://api.apify.com/v2/browser-info",
-});
-*/

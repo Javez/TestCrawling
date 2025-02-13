@@ -23,6 +23,7 @@
 
 import { chromium } from "playwright";
 import * as cheerio from "cheerio";
+import * as fs from "fs";
 
 const urls = [
   {
@@ -40,21 +41,35 @@ const urls = [
 ];
 
 async function scrape() {
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({ headless: false });
+  const results = [];
 
   for (const { url, country } of urls) {
     try {
-      const context = await browser.newContext({ locale: `en-${country}` });
-      const page = await context.newPage();
+      const context = await browser.newContext({
+        userAgent:
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        locale: `en-${country}`,
+        extraHTTPHeaders: {
+          "accept-language": `en-${country},en;q=0.9`,
+          "sec-fetch-site": "same-origin",
+          "sec-fetch-mode": "navigate",
+          "sec-fetch-user": "?1",
+          "sec-fetch-dest": "document",
+          "upgrade-insecure-requests": "1",
+        },
+      });
 
-      const response = await page.goto(url);
+      const page = await browser.newPage();
+
+      const response = await page.goto(url, { waitUntil: "domcontentloaded" });
       const status = response.status();
 
       if (status !== 200) {
-        throw new Error(`Failed to load ${url} - Status: ${status}`);
+        throw new Error(`Failed to load ${url}\nStatus: ${status}`);
       }
 
-      await page.waitForTimeout(2000);
+      await page.waitForTimeout(3000);
 
       const content = await page.content();
       const $ = cheerio.load(content);
@@ -80,7 +95,7 @@ async function scrape() {
       const fullPrice = parseFloat(fullPriceText) || 0;
       const discountedPrice = parseFloat(discountedPriceText) || "No Discount";
 
-      console.log({
+      results.push({
         url,
         fullPrice,
         discountedPrice,
@@ -90,106 +105,22 @@ async function scrape() {
 
       await context.close();
     } catch (error) {
-      console.error(`Error scraping ${url}:`, error.message);
+      console.error(`Error scraping \n${url}\n${error.message}\n`);
       continue;
     }
   }
 
   await browser.close();
+  try {
+    fs.writeFileSync(
+      "./src/playwright-result.json",
+      JSON.stringify({ results }, null, 2),
+      "utf8"
+    );
+    console.log("Finished writing result");
+  } catch (err) {
+    console.log("Error during work:\n", err);
+  }
 }
 
 scrape();
-
-/*Example;
-
-//npx playwright test
-//npx playwright show-report
-//npx playwright test --ui
-
-import { test, expect } from '@playwright/test';
-
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-});
-
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
-
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-});
-
-//Actions
-//Navigation
-
-//Most of the tests will start with navigating page to the URL. After that, test will be able to interact with the page elements.
-
-await page.goto('https://playwright.dev/');
-
-// Create a locator.
-const getStarted = page.getByRole('link', { name: 'Get started' });
-
-// Click it.
-await getStarted.click();
-
-await page.getByRole('link', { name: 'Get started' }).click();
-
-locator.check()	//Check the input checkbox
-locator.click()	//Click the element
-locator.uncheck()	//Uncheck the input checkbox
-locator.hover()	//Hover mouse over the element
-locator.fill()	//Fill the form field, input text
-locator.focus()	//Focus the element
-locator.press()	//Press single key
-locator.setInputFiles()	//Pick files to upload
-locator.selectOption()	//Select option in the drop down
-
-expect(success).toBeTruthy();
-
-await expect(page).toHaveTitle(/Playwright/);
-
-expect(locator).toBeChecked()	//Checkbox is checked
-expect(locator).toBeEnabled()	//Control is enabled
-expect(locator).toBeVisible()	//Element is visible
-expect(locator).toContainText()	//Element contains text
-expect(locator).toHaveAttribute()	//Element has attribute
-expect(locator).toHaveCount()	//List of elements has given length
-expect(locator).toHaveText()	//Element matches text
-expect(locator).toHaveValue()	//Input element has value
-expect(page).toHaveTitle()	//Page has title
-expect(page).toHaveURL()	////Page has URL
-
-//Test Isolation
-
-import { test } from '@playwright/test';
-
-test('example test', async ({ page }) => {
-  // "page" belongs to an isolated BrowserContext, created for this specific test.
-});
-
-test('another test', async ({ page }) => {
-  // "page" in this second test is completely isolated from the first test.
-});
-
-//Using Test Hooks
-
-import { test, expect } from '@playwright/test';
-
-test.describe('navigation', () => {
-  test.beforeEach(async ({ page }) => {
-    // Go to the starting url before each test.
-    await page.goto('https://playwright.dev/');
-  });
-
-  test('main navigation', async ({ page }) => {
-    // Assertions use the expect API.
-    await expect(page).toHaveURL('https://playwright.dev/');
-  });
-});
-*/
