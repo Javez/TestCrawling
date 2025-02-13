@@ -1,0 +1,25 @@
+{
+  "results": [
+    {
+      "url": "https://www.selfridges.com/US/en/product/fear-of-god-essentials-camouflage-panels-relaxed-fit-woven-blend-overshirt_R04364969/#colour=WOODLAND%20CAMO",
+      "fullPrice": 55.0099,
+      "discountedPrice": 99.00255,
+      "currency": "USD",
+      "title": "Camouflage panels relaxed-fit woven-blend overshirt"
+    },
+    {
+      "url": "https://www.selfridges.com/ES/en/product/gucci-interlocking-g-print-crewneck-cotton-jersey-t-shirt_R04247338/",
+      "fullPrice": 585,
+      "discountedPrice": "No Discount",
+      "currency": "EUR",
+      "title": "Interlocking G-print crewneck cotton-jersey T-shirt"
+    },
+    {
+      "url": "https://www.selfridges.com/US/en/product/fear-of-god-essentials-essentials-cotton-jersey-t-shirt_R04318378/#colour=BLACK",
+      "fullPrice": 22.0027,
+      "discountedPrice": 27.5095,
+      "currency": "USD",
+      "title": "ESSENTIALS cotton-jersey T-shirt"
+    }
+  ]
+}

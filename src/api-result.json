@@ -1,0 +1,22 @@
+{
+  "results": [
+    {
+      "url": "https://www.stoneisland.com/en-it/collection/polos-and-t-shirts/slim-fit-short-sleeve-polo-shirt-2sc17-stretch-organic-cotton-pique-81152SC17A0029.html",
+      "apiUrl": "https://www.stoneisland.com/on/demandware.store/Sites-StoneEU-Site/en_IT/ProductApi-Product?pid=81152SC17A0029",
+      "productId": "81152SC17A0029",
+      "fullPrice": 180,
+      "discountedPrice": 180,
+      "currency": "USD",
+      "title": "Black 2SC17 STRETCH ORGANIC COTTON PIQUÉ Slim Fit Short Sleeve Polo Shirt | Stone Island IT"
+    },
+    {
+      "url": "https://www.stoneisland.com/en-it/collection/polos-and-t-shirts/short-sleeve-polo-shirt-22r39-50-2-organic-cotton-pique-811522R39V0097.html",
+      "apiUrl": "https://www.stoneisland.com/on/demandware.store/Sites-StoneEU-Site/en_IT/ProductApi-Product?pid=811522R39V0097",
+      "productId": "811522R39V0097",
+      "fullPrice": 180,
+      "discountedPrice": 126,
+      "currency": "EUR",
+      "title": "Off White 22R39 50/2 ORGANIC COTTON PIQUÉ Short Sleeve Polo Shirt | Stone Island IT"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "results": [
+    {
+      "url": "https://www.outdoorsrlshop.it/catalogo/1883-trekker-rip.html",
+      "fullPrice": "84.90",
+      "discountedPrice": "84.90",
+      "currency": "EUR",
+      "title": "TREKKER RIP",
+      "options": [
+        {
+          "value": "Scegli variante",
+          "optionValue": "0"
+        },
+        {
+          "value": "Blu - L/XL",
+          "optionValue": "268,1033"
+        },
+        {
+          "value": "Blu - S/M",
+          "optionValue": "268,1031"
+        },
+        {
+          "value": "Grigio - L/XL",
+          "optionValue": "266,1033"
+        },
+        {
+          "value": "Grigio - S/M",
+          "optionValue": "266,1031"
+        },
+        {
+          "value": "Verde - L/XL",
+          "optionValue": "270,1033"
+        },
+        {
+          "value": "Verde - S/M",
+          "optionValue": "270,1031"
+        }
+      ]
+    },
+    {
+      "url": "https://www.outdoorsrlshop.it/catalogo/2928-arco-man-t-shirt.html",
+      "fullPrice": "39.90",
+      "discountedPrice": "39.90",
+      "currency": "EUR",
+      "title": "ARCO MAN T-SHIRT",
+      "options": [
+        {
+          "value": "Scegli variante",
+          "optionValue": "0"
+        },
+        {
+          "value": "L - Gibraltar sea / lime gren",
+          "optionValue": "1053,1321"
+        },
+        {
+          "value": "L - Lime green / black",
+          "optionValue": "1053,1333"
+        },
+        {
+          "value": "M - Gibraltar sea / lime gren",
+          "optionValue": "1052,1321"
+        },
+        {
+          "value": "M - Lime green / black",
+          "optionValue": "1052,1333"
+        },
+        {
+          "value": "S - Gibraltar sea / lime gren",
+          "optionValue": "1051,1321"
+        },
+        {
+          "value": "S - Lime green / black",
+          "optionValue": "1051,1333"
+        },
+        {
+          "value": "XL - Gibraltar sea / lime gren",
+          "optionValue": "1054,1321"
+        },
+        {
+          "value": "XL - Lime green / black",
+          "optionValue": "1054,1333"
+        },
+        {
+          "value": "XXL - Gibraltar sea / lime gren",
+          "optionValue": "1055,1321"
+        },
+        {
+          "value": "XXL - Lime green / black",
+          "optionValue": "1055,1333"
+        }
+      ]
+    },
+    {
+      "url": "https://www.outdoorsrlshop.it/catalogo/2383-aircontact-core-65-10-sl.html",
+      "fullPrice": "253.00",
+      "discountedPrice": "320.00",
+      "currency": "EUR",
+      "title": "AIRCONTACT CORE 65 + 10 SL",
+      "options": [
+        {
+          "value": "Scegli variante",
+          "optionValue": "0"
+        },
+        {
+          "value": "Chestnut-umbra",
+          "optionValue": "2023"
+        },
+        {
+          "value": "Shale-ivy",
+          "optionValue": "1319"
+        }
+      ]
+    }
+  ]
+}
